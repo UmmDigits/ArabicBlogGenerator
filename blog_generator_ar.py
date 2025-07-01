@@ -41,9 +41,4 @@ if st.button("أنشئ التدوينة"):
             st.success("✅ تم توليد التدوينة بنجاح!")
             st.write(blog)
 
-        except RateLimitError:
-            st.error("🚫 تم تجاوز الحد اليومي لاستخدام API. تحقق من الباقة.")
-        except AuthenticationError:
-            st.error("❌ مفتاح API غير صحيح أو غير مفعّل.")
-        except OpenAIError as e:
-            st.error(f"❌ حدث خطأ أثناء الاتصال بـ OpenAI: {str(e)}")
+       

@@ -1,9 +1,13 @@
-# Arabic Blog Generator ✍️
+# ✍️ Arabic Blog Generator
 
-Generate Arabic blog posts using AI.
+This app generates Arabic blog posts using OpenAI's GPT model.
 
-## How to Use
+## 🛠 Requirements
 
-1. Install Python 3.9+
-2. Run:
+- Python 3.13 or higher
+- OpenAI API key
+
+## 🚀 How to Run
+
+1. Install dependencies:
    ```

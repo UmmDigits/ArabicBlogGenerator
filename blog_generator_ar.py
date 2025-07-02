@@ -40,5 +40,3 @@ if st.button("أنشئ التدوينة"):
             blog = response.choices[0].message.content.strip()
             st.success("✅ تم توليد التدوينة بنجاح!")
             st.write(blog)
-
-       

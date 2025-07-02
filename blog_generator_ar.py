@@ -2,10 +2,10 @@ import streamlit as st
 import openai
 from openai import OpenAIError, AuthenticationError, RateLimitError
 
-
 # Load API key from secrets
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
+# Page settings
 st.set_page_config(page_title="Arabic Blog Generator", layout="centered")
 st.title("✍️ مولد تدوينات باللغة العربية")
 
@@ -40,3 +40,12 @@ if st.button("أنشئ التدوينة"):
             blog = response.choices[0].message.content.strip()
             st.success("✅ تم توليد التدوينة بنجاح!")
             st.write(blog)
+
+        except AuthenticationError:
+            st.error("❌ فشل في التحقق من مفتاح API.")
+        except RateLimitError:
+            st.error("⚠️ تم تجاوز الحد الأقصى لعدد الطلبات. الرجاء المحاولة لاحقاً.")
+        except OpenAIError as e:
+            st.error(f"❌ حدث خطأ من OpenAI: {e}")
+        except Exception as e:
+            st.error(f"❌ خطأ غير متوقع: {e}")

@@ -2,11 +2,11 @@ import streamlit as st
 import openai
 from openai import OpenAIError, AuthenticationError, RateLimitError
 
-# ✅ Set your API key (for local testing only — don’t use this in public apps)
-openai.api_key = "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"
 
-# ✅ Streamlit Page Settings
-st.set_page_config(page_title="✍️ مولد تدوينات باللغة العربية", layout="centered")
+# Load API key from secrets
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+st.set_page_config(page_title="Arabic Blog Generator", layout="centered")
 st.title("✍️ مولد تدوينات باللغة العربية")
 
 # ✅ Input fields
